@@ -1,0 +1,967 @@
+/* Design of layout & html-coding for Raduga-Light template by Junproger [junproger@gmail.com] */
+html,
+body {
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+		-moz-box-sizing: inherit;
+			box-sizing: inherit;
+}
+html,
+body {
+	scroll-behavior: smooth;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	background-color: #fff;
+	color: #000;
+}
+nav,
+div,
+hr,
+h1,
+h2,
+h3,
+p {
+	display: block;
+	padding: 0 0;
+	border: none;
+	margin: 0 0;
+	color: #000;
+}
+ol, 
+ul,
+li {
+	display: block;
+	padding: 0 0;
+	border: none;
+	margin: 0 0;
+	list-style: none;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+/* Design of layout & html-coding for Raduga-Light template by Junproger [junproger@gmail.com] */
+.body {
+	width: 100%;
+	display: block;
+	padding: 0 0;
+	border: none;
+	margin: 0 0;
+}
+.header {
+	width: 100%;
+	height: 120px;
+	background-color: #FFF;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.header__upline {
+	width: 100%;
+	height: 60px;
+	padding: 0px 60px 0px;
+	position: fixed;
+	top: 0px;
+	z-index: 1000;
+	background-color: #FFF;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 60px;
+}
+.header__logo {
+	width: 220px;
+	height: 44px;
+	background-image: url('./../assets/icons/raduga_logo2.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.header__logo {
+	cursor: pointer;
+}
+.header__menu {
+	width: 100%;
+	max-width: 720px;
+	height: 44px;
+}
+.menu {
+	width: 100%;
+	max-width: 720px;
+	height: 44px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+.menu__list {
+	width: 100%;
+	height: 40px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 22px;
+}
+.menu__link_topmenu {
+	list-style: none;
+}
+.menu__link_down {
+	border: solid black;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 2.5px;
+	vertical-align: 2.5px;
+	margin-left: 3px;
+	-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+					-o-transform: rotate(45deg);
+						transform: rotate(45deg);
+}
+.menu__link_topfont {
+	text-transform: uppercase;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
+	color: #000000;
+}
+.menu__sublist_hidden_long,
+.menu__sublist_hidden_short {
+	position: absolute;
+	overflow: hidden;
+	margin-top: 10px;
+	z-index: 1000;
+	width: 210px;
+	height: 0px;
+	padding-left: 20px;
+	border-radius: 10px;
+	background-color: #FFFFFF;
+	box-shadow: 0 10px 20px gainsboro;
+	-webkit-transition: height 0.5s ease-in-out;
+			-moz-transition: height 0.5s ease-in-out;
+				-ms-transition: height 0.5s ease-in-out;
+					-o-transition: height 0.5s ease-in-out;
+						transition: height 0.5s ease-in-out;
+}
+.menu__link_topmenu:hover .menu__sublist_hidden_long {
+	height: 260px;
+	-webkit-transition: height 0.5s ease-in-out;
+			-moz-transition: height 0.5s ease-in-out;
+				-ms-transition: height 0.5s ease-in-out;
+					-o-transition: height 0.5s ease-in-out;
+						transition: height 0.5s ease-in-out;
+}
+.menu__link_topmenu:hover .menu__sublist_hidden_short {
+	height: 120px;
+	-webkit-transition: height 0.5s ease-in-out;
+			-moz-transition: height 0.5s ease-in-out;
+				-ms-transition: height 0.5s ease-in-out;
+					-o-transition: height 0.5s ease-in-out;
+						transition: height 0.5s ease-in-out;
+}
+.menu__link_submenu {
+	list-style: none;
+	padding:  4.5px 0 5.5px;
+}
+.menu__link_subfont {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #777;
+}
+.popup {
+	visibility: hidden;
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(41, 41, 41, 0.4);
+	box-shadow: 0px 0px 100px 1000px rgba(41, 41, 41, 0.4);
+}
+.popup__content {
+	width: 640px;
+	height: 240px;
+	overflow: hidden;
+	position: relative;
+	z-index: 100000;
+	background-color: #fff;
+	border-radius: 8px;
+}
+.popup__content_close {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+.popup__content_close:before {
+  display: inline-block;
+  content: "\274C"; /* \2A2F */
+}
+.popup__content_form {
+	width: 640px;
+	height: 240px;
+	margin-top: 80px;
+	padding: 0px 120px;
+}
+.popup__content_button,
+.header__callback_button {
+	width: 147px;
+	height: 28px;
+	border: none;
+	border-radius: 5px;
+	margin: 0 10px 0 0;
+	background-color: #E61E1E;
+	color: #FFFFFF;
+}
+#callback {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+			-moz-transition: opacity 0.3s;
+				-ms-transition: opacity 0.3s;
+					-o-transition: opacity 0.3s;
+						transition: opacity 0.3s;
+}
+#callback:target {
+	width: 100vw;
+	height: 100vh;
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+			-moz-transition: opacity 0.3s;
+				-ms-transition: opacity 0.3s;
+					-o-transition: opacity 0.3s;
+						transition: opacity 0.3s;
+}
+body:has(#callback:target) {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+.header__callback_button > span {
+	display: inline-block;
+	padding: 5px 5px;
+}
+.popup__content_button:hover,
+.header__callback_button:hover {
+	box-shadow: 0 5px 5px brown;
+	cursor: pointer;
+}
+.popup__content_button:active,
+.header__callback_button:active {
+	transform: translate(-1px, -2px);
+}
+/* Design of layout & html-coding for Raduga-Light template by Junproger [junproger@gmail.com] */
+.header__downline {
+	width: 100%;
+	height: 120px;
+	padding: 60px 60px 0px;
+	background-color: #FFF;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+}
+.header__brand {
+	width: 220px;
+	height: 44px;
+	text-align: center;
+}
+.header__brand_font {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 14px;
+	color: #000000;
+}
+.header__search {
+	width: 100%;
+	max-width: 720px;
+	height: 44px;
+}
+.search-form {
+	width: 100%;
+	max-width: 720px;
+	height: 44px;
+}
+.search-form__input {
+	width: 100%;
+	height: 35px;
+	outline: none;
+	border-radius: 5px;
+	padding-left: 18px;
+	border: 1px solid hsl(30, 76%, 10%);
+	background-color: #f5f5f5;
+    background-image: url('./../assets/icons/search.svg');
+    background-position: right 5px center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 20px;
+	color: #000000;
+}
+.search-form__results {
+	position: absolute;
+	overflow: hidden;
+	z-index: 1000;
+	width: 100%;
+	max-width: 720px;
+	height: 0px;
+	border: none;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: blue;
+	box-shadow: 0 10px 20px gainsboro;
+	-webkit-transition: height 0.5s ease-in-out;
+			-moz-transition: height 0.5s ease-in-out;
+				-ms-transition: height 0.5s ease-in-out;
+					-o-transition: height 0.5s ease-in-out;
+						transition: height 0.5s ease-in-out;
+}
+.search-form__input:valid + .search-form__results {
+	height: 384px;
+	-webkit-transition: height 0.5s ease-in-out;
+			-moz-transition: height 0.5s ease-in-out;
+				-ms-transition: height 0.5s ease-in-out;
+					-o-transition: height 0.5s ease-in-out;
+						transition: height 0.5s ease-in-out;
+}
+.search-form__list {
+	padding: 20px 40px 10px;
+}
+.search-form__item {
+	padding: 5px;
+}
+.search-form__separator {
+	width: 100%;
+	height: 1px;
+	margin: 10px 0;
+	text-align: center;
+    background-color: lightgrey;
+}
+.search-form__page {
+	padding: 10px 45px;
+	color: red;
+}
+.header__contact {
+	width: 180px;
+	height: 44px;
+	padding-left: 28px;
+	background-image: url('./../assets/icons/phone2red.svg');
+	background-position: top 10px left;
+	background-repeat: no-repeat;
+	background-size: 16.51px 16.52px;
+}
+.header__contact_font {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 36px;
+	vertical-align: top;
+	color: #E61E1E;
+}
+.separator {
+	width: 94%;
+	height: 50px;
+	padding: 17px 0px 30px;
+	margin: 0 auto;
+}
+.separator__line {
+	width: 100%;
+	height: 3px;
+	text-align: center;
+    background-color: lightgrey;
+}
+/* Design of layout & html-coding for Raduga-Light template by Junproger [junproger@gmail.com] */
+.main {
+	width: 100%;
+	max-width: 1280px;
+	background-color: #FFFFFF;
+	margin: 0 auto;
+}
+.carousel__frame {
+	position: relative;
+	width: 100%;
+	max-width: 1120px;
+	height: 525px;
+	margin: 0 auto;
+}
+.carousel__scroll {
+	overflow: hidden;
+	width: 100%;
+	max-width: 1120px;
+	height: 525px;
+	background-color: #fff;
+	scroll-behavior: smooth;
+}
+.carousel__slides {
+	width: 4480px;
+	height: 525px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	align-items: flex-start;
+	background-color: #abc;
+	scroll-behavior: smooth;
+}
+.carousel__item {
+	text-align: center;
+	flex: 0 0 1120px;
+	width: 1120px;
+	height: 525px;
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: contain;
+	scroll-behavior: smooth;
+}
+.carousel__item_img1,
+.carousel__item_img4 {
+	background-image: url('./../assets/images/nv1500big.jpg');
+}
+.carousel__item_img2 {
+	background-image: url('./../assets/images/nv1000big.jpg');
+}
+.carousel__item_img3 {
+	background-image: url('./../assets/images/nv500big.jpg');
+}
+.carousel__item_img1 > a {
+	z-index: 1000;
+}
+#img1:target > a,
+#img2:target > a, 
+#img3:target > a,
+#img4:target > a {
+	z-index: 1111;
+}
+.carousel__item_prev {
+	left: 10px;
+	top: 47%;
+	width: 35px;
+	height: 105px;
+	position: absolute;
+	background-image: url('./../assets/icons/arrow-ls.svg');
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.carousel__item_next {
+	right: 10px;
+	top: 47%;
+	width: 35px;
+	height: 105px;
+	position: absolute;
+	background-image: url('./../assets/icons/arrow-rs.svg');
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.carousel__subtitle {
+	display: inline-block;
+	margin-top: 50px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 64px;
+    color: #777;
+}
+.carousel__subtitle > a {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 32px;
+	color: darkslategrey;
+}
+.carousel_animate {
+	-webkit-animation-name: animate;
+		-moz-animation-name: animate;
+			-ms-animation-name: animate;
+				-o-animation-name: animate;
+					animation-name: animate;
+	-webkit-animation-duration: 49s;
+		-moz-animation-duration: 49s;
+			-ms-animation-duration: 49s;
+				-o-animation-duration: 49s;
+					animation-duration: 49s;
+	-webkit-animation-delay: 4s;
+		-moz-animation-delay: 4s;
+			-ms-animation-delay: 4s;
+				-o-animation-delay: 4s;
+					animation-delay: 4s;
+	/* animation-direction: alternate; */
+	animation-iteration-count: infinite;
+}
+@keyframes 'animate' {
+  0%   {transform: translate(0%);}
+  12.5%  {transform: translate(-25%);}
+  25%  {transform: translate(-50%);}
+  37.5%  {transform: translate(-75%);}
+  50%   {transform: translate(-75%);}
+  62.5%  {transform: translate(-50%);}
+  75%  {transform: translate(-25%);}
+  87.5%  {transform: translate(-0%);}
+}
+.main-title {
+	width: 100%;
+	height: 320px;
+	text-align: center;
+	padding: 40px;
+}
+.main-title__top-h1 {
+	display: inline-block;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 72px;
+    color: #000;
+}
+.main-title__sub-h2 {
+	margin-left: 60px;
+	display: inline-block;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 64px;
+	vertical-align: top;
+	text-decoration: underline;
+	border-radius: 10px;
+    color: #777;
+}
+.main-title__paragraf {
+	margin-top: 40px;
+	font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+	text-align: left;
+    color: #777;
+}
+.main-content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+}
+.main-content__section {
+	width: 100%;
+	height: 380px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+}
+.main-content__title {
+	width: 720px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    color: #444;
+	padding: 20px;
+}
+.main-content__inform {
+	width: 720px;
+	font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    color: #777;
+	padding: 20px;
+}
+.main-content__section_novus1500 {
+	background-image: url('./../assets/images/novus-producs-1500.jpg');
+	background-position: left 40px center;
+	background-repeat: no-repeat;
+	background-size: 360px 380px;
+}
+.main-content__section_novus1000 {
+	align-items: flex-start;
+	padding-left: 20px;
+	background-image: url('./../assets/images/novus-producs-1000.jpg');
+	background-position: right 40px center;
+	background-repeat: no-repeat;
+	background-size: 360px 380px;
+}
+.main-content__section_novus500 {
+	background-image: url('./../assets/images/novus-producs-500.jpg');
+	background-position: left 40px center;
+	background-repeat: no-repeat;
+	background-size: 360px 380px;
+}
+.main-partners__title {
+font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 64px;
+    color: #000;
+	padding: 20px 40px;
+}
+.main-partners__paragraf {
+	font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #777;
+	padding: 20px 40px;
+}
+.main-partners__icons {
+	margin-top: 20px;
+	background-color: #f4f4f4;
+	width: 100%;
+	height: 520px;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 40px 20px;
+	padding: 40px 20px;
+}
+.main-partners__item {
+	width: 280px;
+	height: 80px;
+	border: 1px solid silver;
+	border-radius: 10px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.main-partners__item:hover {
+	box-shadow: 0 5px 10px darkslategrey;
+	cursor: pointer;
+}
+.main-partners__item:active {
+	transform: translate(-2px, -3px);
+}
+.part1 {
+	background-image: url('./../assets/icons/partners/1.jpg');
+}
+.part2 {
+	background-image: url('./../assets/icons/partners/2.png');
+}
+.part3 {
+	background-image: url('./../assets/icons/partners/3.png');
+}
+.part4 {
+	background-image: url('./../assets/icons/partners/4.png');
+}
+.part5 {
+	background-image: url('./../assets/icons/partners/5.png');
+}
+.part6 {
+	background-image: url('./../assets/icons/partners/6.png');
+}
+.part7 {
+	background-image: url('./../assets/icons/partners/7.png');
+}
+.part8 {
+	background-image: url('./../assets/icons/partners/8.png');
+}
+.part9 {
+	background-image: url('./../assets/icons/partners/9.png');
+}
+.part10 {
+	background-image: url('./../assets/icons/partners/10.png');
+}
+.part11 {
+	background-image: url('./../assets/icons/partners/11.png');
+}
+.part12 {
+	background-image: url('./../assets/icons/partners/12.png');
+}
+.main-partners__link {
+	display: block;
+	width: 280px;
+	height: 80px;
+	border: none;
+}
+.main-contact__title {
+font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 64px;
+    color: #000;
+	padding: 20px 40px;
+}
+.contact-dialog {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.contact-form {
+	display: inline-flex;
+	flex-flow: row wrap;
+	justify-content: stretch;
+	align-items: center;
+	gap: 100px;
+	font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #777;
+	padding: 20px 40px;
+}
+.contact-form > textarea {
+	resize: none;
+	color: black;
+}
+.contact-message {
+	width: 480px;
+	height: 260px;
+	font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #777;
+}
+.main-contact__label {
+	display: inline-block;
+	padding: 10px 0;
+}
+.contact-inform {
+	width: 360px;
+	height: 260px;
+	display: inline-flex;
+	flex-flow: column nowrap;
+	justify-content: stretch;
+	align-items: flex-start;
+}
+.contact-inform > input[type="submit"]:hover {
+	cursor: pointer;
+}
+.contact-inform__label {
+	font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #777;
+}
+.contact-inform__label > input {
+	margin-right: 10px;
+}
+/* Design of layout & html-coding for Raduga-Light template by Junproger [junproger@gmail.com] */
+.footer {
+	width: 100%;
+	max-width: 1280px;
+	height: 220px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: #FFFFFF;
+	margin: 0 auto;
+	gap: 5px;
+}
+.footer > div {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	justify-content: start;
+	align-items: flex-start;
+	gap: 15px;
+}
+.footer__column1 {
+	width: 180px;
+	height: 220px;
+}
+.footer__column2 {
+	width: 240px;
+	height: 220px;
+}
+.footer__column3 {
+	width: 220px;
+	height: 220px;
+}
+.footer__column4 {
+	width: 320px;
+	height: 220px;
+}
+.footer__logo {
+	width: 120px;
+	height: 120px;
+	background-image: url('./../assets/icons/Raduga_footer.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.footer__phone,
+.footer__email {
+	font-weight: 600;
+}
+.footer__links {
+	width: 100%;
+	height: 36px;
+	margin-top: 28px;
+}
+.footer__links > a {
+	margin-right: 25px;
+}
+.links_size {
+	width: 36px;
+	height: 36px;
+	display: inline-block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.links_vk {
+	background-image: url('./../assets/icons/iconmonstr-vk-4.svg');
+}
+.links_tw {
+	background-image: url('./../assets/icons/iconmonstr-twitter-4.svg');
+}
+.links_yt {
+	background-image: url('./../assets/icons/iconmonstr-youtube-9.svg');
+}
+.footer__menu_list > li {
+	margin-bottom: 10px;
+}
+.modal {
+	visibility: hidden;
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(41, 41, 41, 0.4);
+	box-shadow: 0px 0px 100px 1000px rgba(41, 41, 41, 0.4);
+}
+.modal__content {
+	width: 980px;
+	height: 320px;
+	overflow: hidden;
+	position: relative;
+	z-index: 100000;
+	background-color: #fff;
+	border-radius: 8px;
+}
+.modal__content_close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+}
+.modal__content_close:before {
+  display: inline-block;
+  content: "\274C"; /* \2A2F */
+}
+.modal__content_form {
+	width: 980px;
+	height: 320px;
+	display: inline-flex;
+	flex-flow: row wrap;
+	justify-content: stretch;
+	align-items: center;
+	gap: 50px;
+	font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #777;
+	padding: 20px 40px;
+}
+.modal__content_button,
+.footer__feedback_button {
+	width: 238px;
+	height: 36px;
+	border: none;
+	border-radius: 5px;
+	margin: 0 8px 0 0;
+	background-color: #E61E1E;
+	text-align: center;
+	color: #FFFFFF;
+}
+#feedback {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+			-moz-transition: opacity 0.3s;
+				-ms-transition: opacity 0.3s;
+					-o-transition: opacity 0.3s;
+						transition: opacity 0.3s;
+}
+#feedback:target {
+	width: 100vw;
+	height: 100vh;
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+			-moz-transition: opacity 0.3s;
+				-ms-transition: opacity 0.3s;
+					-o-transition: opacity 0.3s;
+						transition: opacity 0.3s;
+}
+body:has(#feedback:target) {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+.footer__feedback_button > span {
+	display: inline-block;
+	padding: 5px 5px;
+	font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+}
+.footer__feedback_button:hover {
+	box-shadow: 0 5px 5px brown;
+	cursor: pointer;
+}
+.footer__feedback_button:active {
+	transform: translate(-1px, -2px);
+}
+.sticky-jump {
+    width: 60px;
+    height: 60px;
+    position: sticky;
+	top: 90%;
+	left: 100%;
+    z-index: 1000;
+	border: none;
+    border-radius: 10px;
+    background-color: #E61E1E;
+	background-image: url('./../assets/icons/arrow_up_antu.svg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+/* Design of layout & html-coding for Raduga-Light template by Junproger [junproger@gmail.com] */
